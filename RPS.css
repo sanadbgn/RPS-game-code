@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Gabriela&subset=cyrillic,cyrillic-ext');
+   * { 
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+}
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.fa-skype {
+  background: #00aff0;
+  color: white;
+}
+
+.fa-android {
+  background: #a4c639;
+  color: white;
+}
+
+.fa-dribbble {
+  background: #ea4c89;
+  color: white;
+}
+
+.fa-vimeo {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-tumblr {
+  background: #2c4762;
+  color: white;
+}
+
+.fa-vine {
+  background: #00b489;
+  color: white;
+}
+
+.fa-foursquare {
+  background: #45bbff;
+  color: white;
+}
+
+.fa-stumbleupon {
+  background: #eb4924;
+  color: white;
+}
+
+.fa-flickr {
+  background: #f40083;
+  color: white;
+}
+
+.fa-yahoo {
+  background: #430297;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+
+.fa-rss {
+  background: #ff6600;
+  color: white;
+}
+
+body {
+   background: #24272E ;
+}
+ header {
+   background: white;
+   padding: 30px ;
+ }
+ header > h1 {
+   color :  #24272E ;
+   text-align: center;
+   font-family:gabriela ;
+   
+ }
+ 
+ .score-board {
+   margin: 20px auto;
+   border: 3px solid white;
+   border-radius: 5px;
+   text-align:center;
+   width: 200px;
+   color:#f3ffd4 ;
+   font-size : 40px ;
+   padding: 20px 25px ;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+   position:relative;  
+ }
+ 
+ 
+ .badge {
+   background:#ff141c ;
+   color: white;
+   font-size : 15px;
+   padding: 2px 12px;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ 
+}
+
+
+  #user-label {  
+     position: absolute;
+     top:30px;
+     left: -28px;
+  }
+  #computer-label {
+     position:absolute;
+     top:30px;
+     right:-28px;
+  }
+  
+  .result {
+     color:#fffffc;
+     font-size: 40px;
+     font-family: fantasy;
+     text-align:center;
+     font-weight: bold;
+  }  
+  .choices {
+      text-align: center;
+      margin:45px 0; 
+     
+      
+  }
+  
+  .choice {
+  display: inline-block;
+  margin: 0px 25px ;
+  padding: 1px 3px;
+  border: 1px solid navy;
+  border-radius: 50%;
+  transition: all 0.5s ease ;
+  }
+  
+  .choice:hover {
+     cursor: pointer;
+     
+  }
+  
+  
+  
+  #action-message {
+     color:#c3c3c3 ;
+     margin:50px;
+     border:hidden 3px solid #000000;
+     border-radius:70%;
+     text-align: center;
+     font-size:large 35px;
+     font-weight: bold;
+     font-family:gabriela;
+     background: #110a55;
+    
+  }
+  
+  
+   #copy {
+    color:#ffffff;
+    text-align:center;
+    font-size:15px;
+    font-family:serif;
+    
+  }
+  
+  
+  #dev {
+  color:white;
+     text-align:center;
+  }
+ 
+  .green{
+      border: 4px solid #4dcc7d;
+      box-shadow: 0 0 10px #31b43a;
+      
+  }
+  
+  
+  .red-glow {
+      border: 4px solid #fc121b;
+      box-shadow: 0 0 10px #d01115;
+      
+  }
+  
+  .gray-glow {
+      border: 4px solid #464647;
+      box-shadow: 0 0 10px #25292b ;
+       
+  
+ }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

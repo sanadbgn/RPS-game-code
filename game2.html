@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock Paper Scissors basic version</title>
+<style type="text/css">
+#game-container li {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   list-style: none;;
+   float   : left;
+   width   : 33%;
+   padding : 15px; 
+}
+#counts-container li {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   list-style: none;;
+   float   : left;
+   width   : 33%;
+}
+#human-graphic {
+  height: 200px;
+  width: 115px;
+}
+.rock-hand {
+  background-image: url(rock-paper-scissors.jpg);
+  background-position: -240px 0px;
+}
+.paper-hand {
+  background-image: url(rock-paper-scissors.jpg);
+  background-position: 0px 0px;
+}
+.scissors-hand {
+  background-image: url(rock-paper-scissors.jpg);
+  background-position: -120px 0px;
+}
+#computer-graphic {
+  height: 180px;
+  width: 120px;
+  margin-top: 125px;
+}
+.rock-hand-icon {
+  background-image: url(rock-paper-scissors-icons.jpg);
+  background-position: -120px 0px;
+}
+.paper-hand-icon {
+  background-image: url(rock-paper-scissors-icons.jpg);
+  background-position: 0px 0px;
+}
+.scissors-hand-icon {
+  background-image: url(rock-paper-scissors-icons.jpg);
+  background-position: -248px 0px;
+}
+#countdown-graphic {
+	height: 300px;
+	width: 300px;
+}
+</style>
+</head>
+
+<body>
+
+	<ul id="game-container">
+		<li>
+			<span>The human has chosen:</span><br /><br />
+			<input type="radio" name="human-choice" value="rock">Rock<br />
+			<input type="radio" name="human-choice" value="paper">Paper<br />
+			<input type="radio" name="human-choice" value="scissors">Scissors<br /><br />
+			<div id="human-graphic">
+			</div>
+		</li>
+		<li>
+			<ul id="counts-container">
+				<li>
+					Wins
+					<span id="human-wins">0</span>
+				</li>
+				<li>
+					Draws
+					<span id="draws">0</span>
+				</li>
+				<li>
+					Wins
+					<span id="computer-wins">0</span>
+				</li>
+			</ul>
+			<input type="button" id="play-game" value="Play" /><br /><br />
+			And the winner is : <span id="winner"></span>
+			<div id="countdown-graphic">
+			</div>
+		</li>
+		<li>
+			The computer has chosen:
+			<div id="computer-graphic">
+			</div>
+		</li>
+	</ul>	
+
+
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript">
+	var choiceArray = ['rock', 'paper', 'scissors'];
+	var humanChoice = '';
+	var computerChoice = '';
+	var winner = '';
+	var humanWinsCount = 0;
+	var computerWinsCount = 0;
+	var drawsCount = 0;
+	$('#play-game').click(function() {
+		computerChoice = choiceArray[Math.floor(Math.random() * choiceArray.length)];
+		humanChoice = $('input:radio[name=human-choice]:checked').val();
+		if ((humanChoice === '') || humanChoice === undefined) {
+			alert('Please choose an object to play!');
+		} else {
+			$('#human-graphic').removeClass();
+			$('#computer-graphic').removeClass();
+			updateDisplay();			
+		}
+	});
+	function updateDisplay() {
+		$('#countdown-graphic').css("background-image", "url(1Countdown.gif)"); 
+		setTimeout(func, 5000);
+	}
+	function func() {
+    	$('#countdown-graphic').css("background-image", "url()");
+    	$('#human-graphic').removeClass();
+		$('#human-graphic').addClass('' + humanChoice + '-hand');
+		$('#computer-graphic').removeClass();
+		$('#computer-graphic').addClass('' + computerChoice + '-hand-icon');
+		var winner = theWinnerIs(humanChoice, computerChoice);
+		$('#winner').text(winner);
+		updateCounts(winner);
+	}
+	function updateCounts(winner) {
+		if (winner === 'human') {
+			humanWinsCount += 1;
+			$('#human-wins').text(humanWinsCount);
+		} else if (winner === 'computer') {
+			computerWinsCount += 1;
+			$('#computer-wins').text(computerWinsCount);
+		} else {
+			drawsCount += 1;
+			$('#draws').text(drawsCount);
+		}
+	}
+	function theWinnerIs(humanChoice, computerChoice) {
+		if (humanChoice === computerChoice ) {
+			return 'no winner it is a draw';
+		}
+		if ((humanChoice === 'rock') && (computerChoice === 'scissors')) {
+			return 'human';
+		}
+		if ((humanChoice === 'rock') && (computerChoice === 'paper')) {
+			return 'computer';
+		}
+		if ((humanChoice === 'paper') && (computerChoice === 'scissors')) {
+			return 'computer';
+		}
+		if ((humanChoice === 'paper') && (computerChoice === 'rock')) {
+			return 'human';
+		}
+		if ((humanChoice === 'scissors') && (computerChoice === 'rock')) {
+			return 'computer';
+		}
+		if ((humanChoice === 'scissors') && (computerChoice === 'paper')) {
+			return 'human';
+		}
+	}
+</script>
+
+
+</body>
+</html>
